@@ -80,7 +80,7 @@ export default function Home() {
             </div>
             <div className="flex items-center gap-3">
               <MapPin className="w-6 h-6" />
-              <span>Available for Remote & Local opportunities</span>
+              <span>Available for Remote & Local (chonburi and bangkok, thailand)</span>
             </div>
             <div className="flex items-center gap-3">
               <Mail className="w-6 h-6" />
@@ -184,41 +184,29 @@ export default function Home() {
           <h2 className="text-2xl font-bold border-b border-foreground/10 pb-4">Projects</h2>
           
           <div className="space-y-12">
+            
+            
             <div className="space-y-4">
               <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-1">
-                <h3 className="text-xl font-bold">Personal Portfolio</h3>
-                <span className="text-sm font-medium text-foreground/50 uppercase tracking-wider">Web Development</span>
+                <h3 className="text-xl font-bold">SafeDownly</h3>
+                <span className="text-sm font-medium text-foreground/50 uppercase tracking-wider">Desktop / Security</span>
               </div>
               <p className="text-foreground/80 leading-relaxed">
-                My personal portfolio website. :3
+                A Windows utility that intercepts browser downloads and holds them in quarantine, surfacing file hashes (SHA-256, MD5), real file-type detection, and internal structure analysis so the user can review each file before it reaches the Downloads folder.
               </p>
-              
+
               <div className="flex flex-wrap gap-2 pt-2">
-                <span className="px-3 py-1 bg-foreground/5 rounded-full text-xs font-semibold tracking-wider">NEXT.JS</span>
-                <span className="px-3 py-1 bg-foreground/5 rounded-full text-xs font-semibold tracking-wider">REACT</span>
-                <span className="px-3 py-1 bg-foreground/5 rounded-full text-xs font-semibold tracking-wider">TAILWIND CSS</span>
-                <span className="px-3 py-1 bg-foreground/5 rounded-full text-xs font-semibold tracking-wider">TYPESCRIPT</span>
+                <span className="px-3 py-1 bg-foreground/5 rounded-full text-xs font-semibold tracking-wider">PYTHON</span>
+                <span className="px-3 py-1 bg-foreground/5 rounded-full text-xs font-semibold tracking-wider">BROWSER EXTENSION</span>
+                <span className="px-3 py-1 bg-foreground/5 rounded-full text-xs font-semibold tracking-wider">NATIVE MESSAGING</span>
+                <span className="px-3 py-1 bg-foreground/5 rounded-full text-xs font-semibold tracking-wider">WINDOWS</span>
               </div>
-              
+
               <div className="flex gap-4 pt-2 print:hidden">
-                <a href="https://github.com/Marks0nE-01/Personal_Port_Web" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-sm font-bold border-b border-transparent hover:border-foreground transition-colors">
+                <a href="https://github.com/BlackNortan-MARK01/SafeDownly" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-sm font-bold border-b border-transparent hover:border-foreground transition-colors">
                   <Github className="w-4 h-4" /> Code
                 </a>
-                <a href="https://www.nontapat.page/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-sm font-bold border-b border-transparent hover:border-foreground transition-colors">
-                  <ExternalLink className="w-4 h-4" /> Live Demo
-                </a>
               </div>
-            </div>
-            
-            {/* The "More Projects" section is hidden in print to keep the resume clean and focused */}
-            <div className="space-y-4 print:hidden">
-              <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-1">
-                <h3 className="text-xl font-bold text-red-500">More Projects</h3>
-                <span className="text-sm font-medium text-foreground/50 uppercase tracking-wider">Under Construction</span>
-              </div>
-              <p className="text-foreground/80 leading-relaxed">
-                Stay tuned for more!
-              </p>
             </div>
           </div>
         </section>
