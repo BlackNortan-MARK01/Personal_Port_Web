@@ -102,7 +102,7 @@ export default function Home() {
               </div>
               <p className="text-foreground/60 font-medium">Softdebut Co., Ltd. &bull; Internship &bull; Hybrid</p>
               <ul className="text-foreground/80 leading-relaxed list-disc list-outside ml-5 space-y-1">
-                <li>Executed cross-platform manual tests (Web & Desktop) aligned with Adobe Designer blueprints.</li>
+                <li>Executed cross-platform manual tests (Web & Desktop) aligned with Adobe XD blueprints.</li>
                 <li>Collaborated with the dev team by providing actionable test reports and feedback.</li>
               </ul>
             </div>
