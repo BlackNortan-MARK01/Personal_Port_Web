@@ -1,9 +1,12 @@
 "use client";
 
+import { useState } from "react";
 import { Github, Mail, Linkedin, MapPin, ExternalLink, FileDown } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Home() {
+  const [techMode, setTechMode] = useState(false);
+
   return (
     <div className="min-h-screen text-foreground font-sans relative print:pt-10 print:px-8">
       {/* Background split for full screen width */}
@@ -65,9 +68,15 @@ export default function Home() {
           <h2 className="text-2xl font-bold border-b border-foreground/10 pb-4">Who am I?</h2>
           <div className="space-y-4 text-foreground/80 leading-relaxed text-lg">
             <p>
-              I am a recent IT Graduate and an aspiring Software Developer with a passion for building robust applications. 
-              Skilled in software testing and development, I enjoy fast-paced environments where I can grow my technical expertise 
-              and contribute to impactful software projects.
+              I am a recent IT graduate and developer who enjoys 
+              building practical solutions and understanding how systems 
+              work. With experience in software development (self-taught mostly)
+              , I enjoy learning independently, solving problems
+              , and continuously improving both my technical and communication skills.
+            </p>
+            <p>
+              A fresh graduate who learned most of his skills through self-study and hands-on projects. Enjoys gaming, drawing, food, anime, and everything in between.
+
             </p>
             
           </div>
@@ -80,7 +89,7 @@ export default function Home() {
             </div>
             <div className="flex items-center gap-3">
               <MapPin className="w-6 h-6" />
-              <span>Available for Remote & Local (chonburi and bangkok, thailand)</span>
+              <span>Available for Remote & Local (chonburi, thailand)</span>
             </div>
             <div className="flex items-center gap-3">
               <Mail className="w-6 h-6" />
@@ -181,18 +190,36 @@ export default function Home() {
 
         {/* Projects Section */}
         <section className="space-y-8 bg-card rounded-3xl p-8 lg:p-10 shadow-sm border border-foreground/5">
-          <h2 className="text-2xl font-bold border-b border-foreground/10 pb-4">Projects</h2>
-          
+          <div className="flex items-center justify-between border-b border-foreground/10 pb-4">
+            <h2 className="text-2xl font-bold">Projects</h2>
+            <div className="flex items-center rounded-lg overflow-hidden border border-foreground/10 text-xs font-semibold print:hidden">
+              <button
+                onClick={() => setTechMode(false)}
+                className={`px-3 py-1.5 transition-colors ${!techMode ? "bg-foreground text-background" : "text-foreground/50 hover:text-foreground"}`}
+              >
+                Normal
+              </button>
+              <button
+                onClick={() => setTechMode(true)}
+                className={`px-3 py-1.5 transition-colors ${techMode ? "bg-foreground text-background" : "text-foreground/50 hover:text-foreground"}`}
+              >
+                Technical
+              </button>
+            </div>
+          </div>
+
           <div className="space-y-12">
-            
-            
+
+
             <div className="space-y-4">
               <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-1">
                 <h3 className="text-xl font-bold">SafeDownly</h3>
                 <span className="text-sm font-medium text-foreground/50 uppercase tracking-wider">Desktop / Security</span>
               </div>
               <p className="text-foreground/80 leading-relaxed">
-                A Windows utility that intercepts browser downloads and holds them in quarantine, surfacing file hashes (SHA-256, MD5), real file-type detection, and internal structure analysis so the user can review each file before it reaches the Downloads folder.
+                {techMode
+                  ? "A Python-based Windows utility that hooks into the browser download pipeline via a Native Messaging host and a browser extension. Files are intercepted into a quarantine directory where the backend computes SHA-256/MD5 hashes, runs magic-byte file-type detection, and inspects internal structure (ZIP manifests, PE headers, etc.) before the user approves or rejects each file — preventing anything from reaching the Downloads folder unreviewed."
+                  : "A Windows tool that catches your downloads before they're saved, letting you review each file for potential threats — so nothing suspicious sneaks into your computer without you knowing."}
               </p>
 
               <div className="flex flex-wrap gap-2 pt-2">
