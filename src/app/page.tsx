@@ -47,13 +47,14 @@ export default function Home() {
              <ThemeToggle />
           </div>
 
-          <button 
-            onClick={() => window.print()}
+          <a
+            href="/resume.pdf"
+            download="Nontapat_Ngajuer_Resume.pdf"
             className="flex items-center gap-2 w-fit text-foreground/60 hover:text-heading transition-colors mt-4 text-sm font-medium print:hidden"
           >
             <FileDown className="w-5 h-5" />
-            <span>Generate PDF Resume</span>
-          </button>
+            <span>Download PDF Resume</span>
+          </a>
         </div>
         <div className="mt-8 md:mt-0 pt-8 border-t border-foreground/10 text-sm text-foreground/40 print:hidden">
           <p>© {new Date().getFullYear()} Nontapat Ngajuer. All rights reserved.</p>
