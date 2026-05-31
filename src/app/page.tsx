@@ -213,6 +213,11 @@ export default function Home() {
 
 
             <div className="space-y-4">
+              <img
+                src="/projectimg2.png"
+                alt="SafeDownly preview"
+                className="w-full rounded-xl object-contain border border-foreground/10"
+              />
               <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-1">
                 <h3 className="text-xl font-bold">SafeDownly</h3>
                 <span className="text-sm font-medium text-foreground/50 uppercase tracking-wider">Desktop / Security</span>
