@@ -1,11 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { Github, Mail, Linkedin, MapPin, ExternalLink, FileDown } from "lucide-react";
+import { Github, Mail, Linkedin, MapPin, ExternalLink, FileDown, Maximize2, X } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Home() {
   const [techMode, setTechMode] = useState(false);
+  const [imgOpen, setImgOpen] = useState(false);
 
   return (
     <div className="min-h-screen text-foreground font-sans relative print:pt-10 print:px-8">
@@ -213,11 +214,40 @@ export default function Home() {
 
 
             <div className="space-y-4">
-              <img
-                src="/projectimg2.png"
-                alt="SafeDownly preview"
-                className="w-full rounded-xl object-contain border border-foreground/10"
-              />
+              <div className="relative inline-block w-full">
+                <img
+                  src="/projectimg2.png"
+                  alt="SafeDownly preview"
+                  className="w-full rounded-xl object-contain border border-foreground/10"
+                />
+                <button
+                  onClick={() => setImgOpen(true)}
+                  className="absolute bottom-2 right-2 p-1.5 bg-background/80 hover:bg-background border border-foreground/10 rounded-lg backdrop-blur-sm transition-colors print:hidden"
+                >
+                  <Maximize2 className="w-3.5 h-3.5 text-foreground/70" />
+                </button>
+              </div>
+
+              {imgOpen && (
+                <div
+                  className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm print:hidden"
+                  onClick={() => setImgOpen(false)}
+                >
+                  <div className="relative max-w-6xl w-full mx-4" onClick={e => e.stopPropagation()}>
+                    <img
+                      src="/projectimg2.png"
+                      alt="SafeDownly preview"
+                      className="w-full rounded-2xl border border-foreground/10 shadow-2xl"
+                    />
+                    <button
+                      onClick={() => setImgOpen(false)}
+                      className="absolute top-2 right-2 p-1.5 bg-background/80 hover:bg-background border border-foreground/10 rounded-lg backdrop-blur-sm transition-colors"
+                    >
+                      <X className="w-3.5 h-3.5 text-foreground/70" />
+                    </button>
+                  </div>
+                </div>
+              )}
               <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-1">
                 <h3 className="text-xl font-bold">SafeDownly</h3>
                 <span className="text-sm font-medium text-foreground/50 uppercase tracking-wider">Desktop / Security</span>
