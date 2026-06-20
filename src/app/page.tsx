@@ -1,12 +1,23 @@
 "use client";
 
 import { useState } from "react";
-import { Github, Mail, Linkedin, MapPin, ExternalLink, FileDown, Maximize2, X } from "lucide-react";
+import { Github, Mail, Linkedin, MapPin, ExternalLink, FileDown } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
+import ProjectGallery from "@/components/ProjectGallery";
 
 export default function Home() {
   const [techMode, setTechMode] = useState(false);
-  const [imgOpen, setImgOpen] = useState(false);
+
+  const safeDownlyImages = [
+    { src: "/projectimg2.png", label: "Overview" },
+  ];
+  const matImages = [
+    { src: "/mat/firstpage.jpg", label: "Overview" },
+    { src: "/mat/hardware.jpg", label: "Hardware" },
+    { src: "/mat/login.jpg", label: "Login" },
+    { src: "/mat/showsensor.jpg", label: "Sensor Display" },
+    { src: "/mat/managepage.jpg", label: "Manage Page" },
+  ];
 
   return (
     <div className="min-h-screen text-foreground font-sans relative print:pt-10 print:px-8">
@@ -214,40 +225,7 @@ export default function Home() {
 
 
             <div className="space-y-4">
-              <div className="relative inline-block w-full">
-                <img
-                  src="/projectimg2.png"
-                  alt="SafeDownly preview"
-                  className="w-full rounded-xl object-contain border border-foreground/10"
-                />
-                <button
-                  onClick={() => setImgOpen(true)}
-                  className="absolute bottom-2 right-2 p-1.5 bg-background/80 hover:bg-background border border-foreground/10 rounded-lg backdrop-blur-sm transition-colors print:hidden"
-                >
-                  <Maximize2 className="w-3.5 h-3.5 text-foreground/70" />
-                </button>
-              </div>
-
-              {imgOpen && (
-                <div
-                  className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm print:hidden"
-                  onClick={() => setImgOpen(false)}
-                >
-                  <div className="relative max-w-6xl w-full mx-4" onClick={e => e.stopPropagation()}>
-                    <img
-                      src="/projectimg2.png"
-                      alt="SafeDownly preview"
-                      className="w-full rounded-2xl border border-foreground/10 shadow-2xl"
-                    />
-                    <button
-                      onClick={() => setImgOpen(false)}
-                      className="absolute top-2 right-2 p-1.5 bg-background/80 hover:bg-background border border-foreground/10 rounded-lg backdrop-blur-sm transition-colors"
-                    >
-                      <X className="w-3.5 h-3.5 text-foreground/70" />
-                    </button>
-                  </div>
-                </div>
-              )}
+              <ProjectGallery images={safeDownlyImages} alt="SafeDownly preview" />
               <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-1">
                 <h3 className="text-xl font-bold">SafeDownly</h3>
                 <span className="text-sm font-medium text-foreground/50 uppercase tracking-wider">Desktop / Security</span>
@@ -263,6 +241,7 @@ export default function Home() {
                 <span className="px-3 py-1 bg-foreground/5 rounded-full text-xs font-semibold tracking-wider">BROWSER EXTENSION</span>
                 <span className="px-3 py-1 bg-foreground/5 rounded-full text-xs font-semibold tracking-wider">NATIVE MESSAGING</span>
                 <span className="px-3 py-1 bg-foreground/5 rounded-full text-xs font-semibold tracking-wider">WINDOWS</span>
+                <span className="px-3 py-1 bg-foreground/5 rounded-full text-xs font-semibold tracking-wider">OPEN SOURCE</span>
               </div>
 
               <div className="flex gap-4 pt-2 print:hidden">
@@ -271,6 +250,35 @@ export default function Home() {
                 </a>
               </div>
             </div>
+
+            {/* MAT Project */}
+            <div className="space-y-4">
+              <ProjectGallery images={matImages} alt="Monitoring Buoy preview" />
+
+              <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-1">
+                <h3 className="text-xl font-bold">Monitoring Buoy in Mangrove Forests</h3>
+                <span className="text-sm font-medium text-foreground/50 uppercase tracking-wider">Hardware / Website</span>
+              </div>
+              <p className="text-foreground/80 leading-relaxed">
+                {techMode
+                  ? "Dual ESP32 microcontrollers collecting environmental data via BH7152 (I2C, light), DS18B20 (One-Wire, water temp), NPK sensor (RS-485, N/P/K/salinity), analog turbidity, MH-Z19B (UART, CO₂), and GPS (UART). Powered by a 5V/10W solar panel with LiFePO4 backup. Data is transmitted over Wi-Fi via HTTP POST to a university-hosted MySQL server. Web frontend provides login, live sensor readings, and a management dashboard. The system has already been adopted and put into real-world use by researchers."
+                  : "A solar-powered floating buoy that monitors mangrove forest health by measuring water temperature, soil nutrients, light intensity, CO₂, and water clarity — sending all data wirelessly to a web dashboard for real-time viewing. Built as a senior thesis project at KMUTNB, and already being used by researchers in the field."}
+              </p>
+
+              <div className="flex flex-wrap gap-2 pt-2">
+                <span className="px-3 py-1 bg-foreground/5 rounded-full text-xs font-semibold tracking-wider">ESP32</span>
+                <span className="px-3 py-1 bg-foreground/5 rounded-full text-xs font-semibold tracking-wider">IOT</span>
+                <span className="px-3 py-1 bg-foreground/5 rounded-full text-xs font-semibold tracking-wider">ARDUINO C</span>
+                <span className="px-3 py-1 bg-foreground/5 rounded-full text-xs font-semibold tracking-wider">MYSQL</span>
+                <span className="px-3 py-1 bg-foreground/5 rounded-full text-xs font-semibold tracking-wider">PHP</span>
+                <span className="px-3 py-1 bg-foreground/5 rounded-full text-xs font-semibold tracking-wider">REACT</span>
+                <span className="px-3 py-1 bg-foreground/5 rounded-full text-xs font-semibold tracking-wider">NODE.JS</span>
+                <span className="px-3 py-1 bg-foreground/5 rounded-full text-xs font-semibold tracking-wider">NEXT.JS</span>
+                <span className="px-3 py-1 bg-foreground/5 rounded-full text-xs font-semibold tracking-wider">SOLAR POWER</span>
+                <span className="px-3 py-1 bg-foreground/5 rounded-full text-xs font-semibold tracking-wider">WEB DASHBOARD</span>
+              </div>
+            </div>
+
           </div>
         </section>
 
