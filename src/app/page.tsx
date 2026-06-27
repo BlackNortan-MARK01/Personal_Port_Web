@@ -88,7 +88,7 @@ export default function Home() {
               , and continuously improving both my technical and communication skills.
             </p>
             <p>
-              A fresh graduate who learned most of his skills through self-study and hands-on projects. Enjoys gaming, drawing, food, anime, and everything in between.
+              Engineer guy focusing on Software Development but with Design, QA, Infrastructure and IoT Skills. Enjoys gaming, drawing, food, anime, and everything in between.
 
             </p>
             
