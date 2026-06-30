@@ -61,11 +61,11 @@ export default function Home() {
 
           <a
             href="/resume.pdf"
-            download="Nontapat_Ngajuer_Resume.pdf"
+            download="CV_Nontapat_Ngajuer.pdf"
             className="flex items-center gap-2 w-fit text-foreground/60 hover:text-heading transition-colors mt-4 text-sm font-medium print:hidden"
           >
             <FileDown className="w-5 h-5" />
-            <span>Download PDF Resume</span>
+            <span>Download My CV (ENG)</span>
           </a>
         </div>
         <div className="mt-8 md:mt-0 pt-8 border-t border-foreground/10 text-sm text-foreground/40 print:hidden">
@@ -125,6 +125,7 @@ export default function Home() {
               <p className="text-foreground/60 font-medium">Softdebut Co., Ltd. &bull; Internship &bull; Hybrid</p>
               <ul className="text-foreground/80 leading-relaxed list-disc list-outside ml-5 space-y-1">
                 <li>Executed cross-platform manual tests (Web & Desktop) aligned with Adobe XD blueprints.</li>
+                <li>Implemented end-to-end automation using Playwright to ensure system stability.</li>
                 <li>Collaborated with the dev team by providing actionable test reports and feedback.</li>
               </ul>
             </div>
